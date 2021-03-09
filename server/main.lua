@@ -20,7 +20,7 @@ ESX.RegisterUsableItem('water', function(source)
 	xPlayer.showNotification(_U('used_water'))
 end)
 
-ESX.RegisterCommand('heal', 'admin', function(xPlayer, args, showError)
+RegisterCommand('heal', function(xPlayer, args, showError)
 	args.playerId.triggerEvent('esx_basicneeds:healPlayer')
 	args.playerId.triggerEvent('chat:addMessage', {args = {'^5HEAL', 'You have been healed.'}})
 end, true, {help = 'Heal a player, or yourself - restores thirst, hunger and health.', validate = true, arguments = {
